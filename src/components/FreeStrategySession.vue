@@ -1,0 +1,32 @@
+<template>
+  <section id="booking" class="py-16 bg-white text-gray-900">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center">
+      <div class="md:w-1/2 p-8 bg-gray-100 rounded-lg shadow-md">
+        <img src="../assets/logo.svg" alt="TeamSquad360 Logo" class="w-40 mx-auto mb-4">
+        <h2 class="text-2xl font-bold text-center">Book a Free Strategy Session</h2>
+        <p class="text-center mt-2 text-sm">30 min</p>
+        <p class="text-center text-gray-500">Web conferencing details provided upon confirmation.</p>
+        <div class="mt-6">
+          <label for="date" class="block text-sm font-bold mb-2">Select a Date & Time</label>
+          <input type="date" id="date" class="w-full p-2 border border-gray-300 rounded-lg mb-4">
+          <div class="grid grid-cols-2 gap-2">
+            <button class="w-full py-2 bg-teal-500 text-white rounded-lg">5:30 PM</button>
+            <button class="w-full py-2 bg-teal-500 text-white rounded-lg">6:00 PM</button>
+            <button class="w-full py-2 bg-teal-500 text-white rounded-lg">6:30 PM</button>
+            <button class="w-full py-2 bg-teal-500 text-white rounded-lg">7:00 PM</button>
+          </div>
+        </div>
+        <div class="mt-4 text-center">
+          <p class="text-gray-500">Time zone</p>
+          <p class="text-sm">Asia/Dhaka (6:06 PM)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "FreeStrategySession"
+};
+</script>

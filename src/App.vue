@@ -3,11 +3,12 @@
     <Navbar />
     <HeroSection />
     <ServicesSection />
-    <FreeStrategySession />
+
     <SeoToolsSection />
     <AchievementsSection />
-    <PartnersSection />
+
     <WorkDoneSection />
+    <FreeStrategySession />
     <Footer />
   </div>
 </template>

@@ -14,26 +14,48 @@
               id="date"
               v-model="selectedDate"
               class="w-full p-2 border border-gray-300 rounded-lg mb-4"
+              @change="onDateChange"
           />
         </div>
 
         <div>
           <label class="block text-sm font-bold mb-2">Select a Time</label>
           <div class="grid grid-cols-2 gap-2">
-            <button
+            <!-- Loop through available times and make them look and behave like radio buttons -->
+            <label
                 v-for="time in availableTimes"
                 :key="time"
-                @click="selectTime(time)"
-                class="w-full py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition duration-200"
+                class="flex items-center justify-center w-full py-2 rounded-lg cursor-pointer border border-gray-300 transition duration-200"
+                :class="{
+                'bg-teal-500 text-white border-teal-500': selectedTime === time,
+                'hover:bg-gray-100': selectedTime !== time
+              }"
             >
+              <input
+                  type="radio"
+                  name="time"
+                  :value="time"
+                  v-model="selectedTime"
+                  class="hidden"
+              />
               {{ time }}
-            </button>
+            </label>
           </div>
         </div>
 
         <div class="mt-4 text-center">
           <p class="text-gray-500">Time zone</p>
           <p class="text-sm">Asia/Dhaka (6:06 PM)</p>
+        </div>
+
+        <!-- Submit button appears when date and time are both selected -->
+        <div v-if="isSubmitEnabled" class="mt-6 text-center">
+          <button
+              @click="submitBooking"
+              class="py-2 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
+          >
+            Submit
+          </button>
         </div>
       </div>
     </div>
@@ -45,14 +67,25 @@ export default {
   name: "FreeStrategySession",
   data() {
     return {
-      selectedDate: null,
+      selectedDate: "",
+      selectedTime: null,
       availableTimes: ["5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM"], // Example time slots
     };
   },
+  computed: {
+    // Computed property to check if both date and time are selected
+    isSubmitEnabled() {
+      return this.selectedDate !== "" && this.selectedTime !== null;
+    }
+  },
   methods: {
-    selectTime(time) {
-      // Handle the time selection
-      alert(`You have selected ${time} on ${this.selectedDate}`);
+    onDateChange(event) {
+      // Update selected date
+      this.selectedDate = event.target.value;
+    },
+    submitBooking() {
+      // Handle the booking submission logic
+      alert(`Booking confirmed for ${this.selectedTime} on ${this.selectedDate}`);
     }
   }
 };
@@ -60,4 +93,36 @@ export default {
 
 <style scoped>
 /* You can add any specific styles for this component here */
+label {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+label:hover {
+  background-color: #f3f4f6; /* Lighter background on hover */
+}
+
+input[type="radio"]:checked + label {
+  background-color: #38b2ac; /* Selected background */
+  color: white;
+}
+
+input[type="radio"] {
+  display: none; /* Hide actual radio button */
+}
+
+.bg-teal-500 {
+  background-color: #38b2ac;
+}
+
+.text-white {
+  color: white;
+}
+
+.border-teal-500 {
+  border-color: #38b2ac;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: #f7fafc;
+}
 </style>

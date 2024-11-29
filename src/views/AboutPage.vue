@@ -1,8 +1,8 @@
 <template>
   <Navbar />
-  <div class="about-page"> <!-- Removed pt-20 here -->
+  <div class="about-page">
     <!-- About TechSquad Section -->
-    <section class="bg-gradient py-12 mt-20"> <!-- Adjusted mt-20 here -->
+    <section class="bg-gradient py-12 mt-1">
       <div class="container mx-auto px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">About TechSquad360</h2>
@@ -212,7 +212,7 @@ html, body {
 .about-page {
   background: linear-gradient(45deg, #213A57, #0B6477);
   min-height: 100vh;
-  /* Adjust padding-top as per the height of your navbar */
+  padding-top: 60px; /* Adjust this to match navbar height */
 }
 
 .bg-gradient {

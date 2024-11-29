@@ -35,34 +35,11 @@
       </div>
 
       <!-- Guides/Whitepapers Section -->
-      <h2 class="text-3xl font-bold mb-6">Downloadable Guides & Whitepapers</h2>
-      <p class="text-lg mb-10">Enhance your knowledge with our expert resources.</p>
-      <div class="flex flex-col space-y-4">
-        <div class="flex flex-col md:flex-row justify-between items-center bg-[#0AD1C8] p-4 rounded-lg transition-transform transform hover:scale-105">
-          <div class="flex items-center mb-4 md:mb-0">
-            <i class="fas fa-file-alt text-teal-500 text-xl mr-3"></i>
-            <div>
-              <h4 class="text-xl font-semibold">Ultimate Guide to Cloud Computing</h4>
-              <p class="text-sm">A comprehensive guide to understanding cloud computing and its benefits.</p>
-            </div>
-          </div>
-          <a href="#" class="bg-teal-500 text-white px-3 py-1 rounded-full hover:bg-teal-600 transition-transform transform hover:scale-105">
-            Download
-          </a>
-        </div>
 
-        <div class="flex flex-col md:flex-row justify-between items-center bg-[#0AD1C8] p-4 rounded-lg transition-transform transform hover:scale-105">
-          <div class="flex items-center mb-4 md:mb-0">
-            <i class="fas fa-file-alt text-teal-500 text-xl mr-3"></i>
-            <div>
-              <h4 class="text-xl font-semibold">Case Study: Cybersecurity Solutions</h4>
-              <p class="text-sm">Read our in-depth analysis of effective cybersecurity strategies.</p>
-            </div>
-          </div>
-          <a href="#" class="bg-teal-500 text-white px-3 py-1 rounded-full hover:bg-teal-600 transition-transform transform hover:scale-105">
-            Download
-          </a>
-        </div>
+      <div class="flex flex-col space-y-4">
+
+
+
       </div>
     </div>
   </section>

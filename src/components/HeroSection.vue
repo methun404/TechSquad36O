@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gray-900 text-white flex items-center" id="hero-section">
+  <section class="bg-gradient-to-r from-[#213A57] to-[#0B6477] text-white flex items-center" id="hero-section">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 md:pt-24">
       <!-- Text Content (Left for larger screens, Top for mobile) -->
       <div class="w-full md:w-1/2 text-left mb-10 md:mb-0">
@@ -52,7 +52,7 @@
             :loop="false"
             :speed="1"
             ref="anim"
-            class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px]"
+            class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[580px] lg:h-[580px]"
         />
       </div>
     </div>
@@ -90,7 +90,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif; /* Updated font to Poppins */
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Fade-in animations */
@@ -120,12 +120,12 @@ a:hover {
 
 /* Reduced space between list items */
 ul li {
-  margin-bottom: 0.25rem; /* Reduced vertical space */
+  margin-bottom: 0.25rem;
 }
 
 @media (max-width: 768px) {
   #hero-section {
-    padding-top: 5rem; /* Reduced from 8rem to 5rem */
+    padding-top: 6rem; /* Increased for mobile */
     padding-bottom: 4rem;
   }
 
@@ -144,7 +144,7 @@ ul li {
 
 @media (min-width: 769px) {
   #hero-section {
-    padding-top: 6rem; /* Reduced from default value to 6rem */
+    padding-top: 3rem; /* Reduced for desktop */
     padding-bottom: 4rem;
     min-height: 80vh;
   }

@@ -1,74 +1,43 @@
 <template>
   <div>
-    <!-- Navbar with fade-down animation -->
-    <Navbar />
+    <!-- Show loading screen while loading -->
+    <div v-if="isLoading" class="loading-screen">
+     <loading-spinner/>
+    </div>
 
-    <!-- Hero Section with fade-in animation -->
-    <HeroSection />
-
-    <!-- Services Section with slide-in animation -->
-    <ServicesSection />
-
-    <!-- SEO Tools Section with slide-in animation -->
-    <SeoToolsSection />
-
-    <!-- Our Process Section with slide-in animation -->
-    <OurProcess />
-
-
-
-
-
-    <!-- Blog Resources Section for helpful content -->
-    <BlogResourcesSection />
-
-    <!-- Free Strategy Session with slide-in animation -->
-    <FreeStrategySession />
-
-    <!-- About Us Section to build trust -->
-    <AboutUs />
-
-    <!-- Footer with fade-in animation -->
-    <Footer />
+    <!-- Main application content -->
+    <router-view />
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
-import HeroSection from './components/HeroSection.vue';
-import ServicesSection from './components/ServicesSection.vue';
-import FreeStrategySession from './components/FreeStrategySession.vue';
-import SeoToolsSection from './components/SeoToolsSection.vue';
-import AchievementsSection from './components/AchievementsSection.vue';
-import PartnersSection from './components/PartnersSection.vue';
-import WorkDoneSection from './components/WorkDoneSection.vue';
-import Footer from './components/Footer.vue';
-import AboutUs from "./components/AboutUs.vue";
-import OurProcess from "./components/OurProcess.vue";
-import BlogResourcesSection from "./components/BlogResourcesSection.vue";
+import { mapState } from 'vuex';
+import LoadingSpinner from "@/components/LoadingSpinner.vue";
 
 export default {
-  components: {
-    Navbar,
-    HeroSection,
-    ServicesSection,
-    SeoToolsSection,
-    OurProcess,
-    AchievementsSection,
-    PartnersSection,
-    WorkDoneSection,
-    BlogResourcesSection,
-    FreeStrategySession,
-    AboutUs,
-    Footer
-  }
+  components: {LoadingSpinner},
+  computed: {
+    ...mapState({
+      isLoading: (state) => state.isLoading, // Map the isLoading state from Vuex
+    }),
+  },
 };
 </script>
 
 <style>
-html {
-  scroll-behavior: smooth; /* Enables smooth scrolling */
+/* Global loading screen styles */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  z-index: 1000; /* Ensure the loading screen is above other content */
 }
-
-/* Add any additional global styles here */
 </style>

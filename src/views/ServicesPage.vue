@@ -1,9 +1,10 @@
 <template>
-  <Navbar/>
-  <section class="min-h-screen bg-gradient-to-r from-[#213A57] to-[#0B6477] text-white py-16 px-4 flex flex-col pt-20">
-    <div class="container mx-auto flex-1 space-y-16">
-      <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 mt-12 animate-fadeIn">Our Services</h1>
-      <ServiceCard
+  <div>
+    <Navbar />
+    <section class="min-h-screen bg-gradient-to-r from-[#213A57] to-[#0B6477] text-white py-16 px-4 flex flex-col pt-24">
+      <div class="container mx-auto flex-1 space-y-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-fadeIn">Our Services</h1>
+        <ServiceCard
           v-for="(service, index) in services"
           :key="index"
           :title="service.title"
@@ -11,15 +12,19 @@
           :keyPoints="service.keyPoints"
           :description="service.description"
           :reverse="index % 2 !== 0"
-      />
-    </div>
-  </section>
-  <Footer class="bg-gradient-to-r from-[#213A57] to-[#0B6477] text-white py-8"/>
+        />
+      </div>
+    </section>
+    <Footer />
+  </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import LottieAnimation from '../components/LottieAnimation.vue';
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+import ServiceCard from "@/components/ServiceCard.vue";
+
 import seoAnimationData from '../assets/lotti_animation/seo_animation_lotti.json';
 import digitalMarketingAnimationData from '../assets/lotti_animation/degital_marketing_animation.json';
 import webToAppAnimationData from '../assets/lotti_animation/web_to_app_animation.json';
@@ -29,49 +34,13 @@ import cybersecurityAnimationData from '../assets/lotti_animation/cyber_animatio
 import itSupportAnimationData from '../assets/lotti_animation/service_animation.json';
 import saasAnimationData from '../assets/lotti_animation/saas_animation.json';
 import cloudComputingAnimationData from '../assets/lotti_animation/cloud_animation.json';
-import Navbar from "../components/Navbar.vue";
-import Footer from "../components/Footer.vue";
 
 export default defineComponent({
   name: 'ServicesPage',
   components: {
-    Footer,
     Navbar,
-    ServiceCard: {
-      props: {
-        title: String,
-        keyPoints: String,
-        description: String,
-        animationData: Object,
-        reverse: Boolean,
-      },
-      components: {
-        LottieAnimation,
-      },
-      template: `
-        <div
-            class="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#213A57] to-[#0B6477] text-white rounded-lg shadow-2xl p-8 space-y-8 md:space-y-0 md:space-x-8 hover:shadow-2xl transition-transform duration-300 hover:scale-105 overflow-hidden"
-            :class="reverse ? 'md:flex-row-reverse' : ''">
-          <!-- Left Side: Details -->
-          <div class="md:w-2/3 space-y-6">
-            <h2 class="text-3xl font-bold">{{ title }}</h2>
-            <ul class="list-disc pl-6 space-y-2">
-              <li v-for="(point, index) in keyPoints.split(',')" :key="index">{{ point.trim() }}</li>
-            </ul>
-            <p class="text-lg mt-4 break-words">{{ description }}</p>
-          </div>
-          <!-- Right Side: Lottie Animation -->
-          <div class="md:w-1/3 flex justify-center items-center">
-            <LottieAnimation
-                :animationData="animationData"
-                autoplay
-                loop
-                class="lottie-animation"
-            />
-          </div>
-        </div>
-      `,
-    },
+    Footer,
+    ServiceCard,
   },
   data() {
     return {
@@ -146,28 +115,6 @@ export default defineComponent({
   }
 }
 .animate-fadeIn {
-  animation: fadeIn 2s ease-in-out;
-}
-.lottie-animation {
-  max-width: 400px;
-  max-height: 400px;
-}
-@media (min-width: 768px) {
-  .lottie-animation {
-    max-width: 500px;
-    max-height: 500px;
-  }
-}
-section {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-.container {
-  flex-grow: 1;
-}
-footer {
-  margin-top: auto;
-  box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease-in-out;
 }
 </style>

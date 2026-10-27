@@ -1,14 +1,12 @@
 import './assets/main.css';
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router'
-import {store} from "@/store.js";
+import router from './router';
+import { store } from '@/store.js';
 
+// Initialize and mount Vue application instance
+const app = createApp(App);
 
-console.log("Initializing Vue app with router...");
-createApp(App)
-    .use(router)
-    .use(store)  // Use Vuex store
-    .mount('#app');
-
-console.log("Vue app mounted.");
+app.use(router);
+app.use(store);
+app.mount('#app');

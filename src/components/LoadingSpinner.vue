@@ -1,9 +1,11 @@
 <template>
-  <div class="loading-spinner">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div class="loading-overlay">
+    <div class="spinner-dots">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </template>
 
@@ -14,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.loading-spinner {
+.loading-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,18 +25,33 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
-  backdrop-filter: blur(8px); /* Blur effect */
-  z-index: 999; /* Lower than the Navbar */
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
 }
 
-.loading-spinner div {
+.spinner-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-dots div {
   width: 1rem;
   height: 1rem;
-  margin: 0.5rem;
+  margin: 0.4rem;
   border-radius: 50%;
   background: #0ad1c8;
   animation: bounce 1.4s infinite ease-in-out;
+}
+
+.spinner-dots div:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.spinner-dots div:nth-child(2) {
+  animation-delay: -0.16s;
 }
 
 @keyframes bounce {

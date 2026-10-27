@@ -21,7 +21,7 @@
       </div>
 
       <!-- Contact Form -->
-      <form @submit.prevent="handleSubmit" class="max-w-lg mx-auto bg-[#H5DFB1] p-8 rounded-lg shadow-lg">
+      <form @submit.prevent="handleSubmit" class="max-w-lg mx-auto bg-[#5EDFB1]/20 p-8 rounded-lg shadow-lg border border-[#0AD1C8]/30">
         <h3 class="text-2xl font-semibold mb-6 text-center">Contact Us</h3>
         <div class="mb-4">
           <label for="name" class="block text-sm font-medium mb-1">Name</label>

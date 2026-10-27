@@ -11,7 +11,7 @@
       <router-link to="/" class="flex items-center">
         <img
             src="../assets/main_logo.png"
-            alt="TeamSquad360 Logo"
+            alt="TechSquad360 Logo"
             :class="scrolled && isHomePage ? 'invert' : ''"
             class="h-10 md:h-12 mr-3"
         />
@@ -28,7 +28,7 @@
 
       <!-- Mobile Menu Icon -->
       <div class="block md:hidden">
-        <button @click="toggleMenu" class="focus:outline-none">
+        <button @click="toggleMenu" aria-label="Toggle navigation menu" class="focus:outline-none">
           <svg
               v-if="!menuOpen"
               :class="{
@@ -190,7 +190,7 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
     this.$router.afterEach(this.checkRoute); // Update the route info when navigating
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {

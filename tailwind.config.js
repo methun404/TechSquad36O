@@ -11,7 +11,7 @@ export default {
         secondary: "#0B6477",       // Teal
         accent: "#14919B",          // Light teal
         lightAccent: "#0AD1C8",     // Lighter teal
-        highlight: "#H5DFB1",       // Soft green
+        highlight: "#5EDFB1",       // Soft green
         lightGreen: "#80ED99",      // Very light green
       },
       backgroundImage: {

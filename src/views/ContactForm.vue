@@ -97,9 +97,9 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-import Navbar from "../components/Navbar.vue";
-import Footer from "../components/Footer.vue";
+import { defineComponent } from "vue";
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
 import gsap from "gsap";
 
 export default defineComponent({

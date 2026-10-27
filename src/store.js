@@ -1,19 +1,27 @@
 import { createStore } from 'vuex';
 
+/**
+ * Vuex Store for global application state management.
+ */
 export const store = createStore({
-    state() {
-        return {
-            isLoading: false, // Global loading state
-        };
+  state() {
+    return {
+      isLoading: false,
+    };
+  },
+  mutations: {
+    setLoading(state, status) {
+      state.isLoading = Boolean(status);
     },
-    mutations: {
-        setLoading(state, status) {
-            state.isLoading = status; // Mutation to toggle loading state
-        },
+  },
+  actions: {
+    setLoading({ commit }, status) {
+      commit('setLoading', status);
     },
-    actions: {
-        setLoading({ commit }, status) {
-            commit('setLoading', status); // Action to set loading state
-        },
-    },
+  },
+  getters: {
+    isLoading: (state) => state.isLoading,
+  },
 });
+
+export default store;

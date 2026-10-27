@@ -1,5 +1,6 @@
 <template>
   <div class="scroll-container">
+    <Navbar />
     <HeroSection />
     <ServicesSection />
     <SeoToolsSection />
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import Navbar from "@/components/Navbar.vue";
 import HeroSection from "@/components/HeroSection.vue";
 import ServicesSection from "@/components/ServicesSection.vue";
 import SeoToolsSection from "@/components/SeoToolsSection.vue";
@@ -24,6 +26,7 @@ import Footer from "@/components/Footer.vue";
 export default {
   name: 'HomePage',
   components: {
+    Navbar,
     HeroSection,
     ServicesSection,
     SeoToolsSection,
@@ -37,5 +40,8 @@ export default {
 </script>
 
 <style scoped>
-/* Add any specific styling for your homepage here */
+/* Scoped styles for homepage container */
+.scroll-container {
+  min-height: 100vh;
+}
 </style>

@@ -1,60 +1,66 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { store } from '../store'; // Import Vuex store
+import { store } from '@/store';
 
-// Lazy-loaded components
-const AboutPage = () => import('../views/AboutPage.vue');
-const NotFoundPage = () => import('../views/404Page.vue');
-const ServicesPage = () => import('../views/ServicesPage.vue');
-const ContactForm = () => import('../views/ContactForm.vue');
-const HomePage = () => import('../views/HomePage.vue');
+// Lazy-loaded route views
+const HomePage = () => import('@/views/HomePage.vue');
+const ServicesPage = () => import('@/views/ServicesPage.vue');
+const AboutPage = () => import('@/views/AboutPage.vue');
+const ContactForm = () => import('@/views/ContactForm.vue');
+const NotFoundPage = () => import('@/views/404Page.vue');
 
 const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: HomePage,
-        meta: { title: 'Home - TechSquad360' },
-    },
-    {
-        path: '/services',
-        name: 'ServicesPage',
-        component: ServicesPage,
-        meta: { title: 'Services - TechSquad360' },
-    },
-    {
-        path: '/about',
-        name: 'AboutPage',
-        component: AboutPage,
-        meta: { title: 'About Us - TechSquad360' },
-    },
-    {
-        path: '/contact',
-        name: 'ContactForm',
-        component: ContactForm,
-        meta: { title: 'Contact - TechSquad360' },
-    },
-    {
-        path: '/:pathMatch(.*)*',
-        name: 'NotFound',
-        component: NotFoundPage,
-        meta: { title: '404 - Page Not Found' },
-    },
+  {
+    path: '/',
+    name: 'Home',
+    component: HomePage,
+    meta: { title: 'TechSquad360 | Complete Tech & Digital Solutions' },
+  },
+  {
+    path: '/services',
+    name: 'Services',
+    component: ServicesPage,
+    meta: { title: 'Our Services | TechSquad360' },
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutPage,
+    meta: { title: 'About Us | TechSquad360' },
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: ContactForm,
+    meta: { title: 'Contact Us | TechSquad360' },
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFoundPage,
+    meta: { title: '404 - Page Not Found | TechSquad360' },
+  },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+  history: createWebHistory(),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { top: 0, behavior: 'smooth' };
+  },
 });
 
-// Navigation Guards to manage loading state
+// Navigation Guards to manage global loading and document title
 router.beforeEach((to, from, next) => {
-    store.dispatch('setLoading', true); // Show loading before route change
-    document.title = to.meta.title || 'TechSquad360'; // Set the page title
-    next(); // Proceed with the navigation
+  store.dispatch('setLoading', true);
+  document.title = to.meta.title || 'TechSquad360';
+  next();
 });
 
 router.afterEach(() => {
-    store.dispatch('setLoading', false); // Hide loading after route has been resolved
+  store.dispatch('setLoading', false);
 });
 
 export default router;

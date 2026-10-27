@@ -1,6 +1,5 @@
 <template>
   <section id="services" class="py-8 md:py-16 bg-gray-50">
-    <Navbar />
     <div class="container mx-auto text-center px-4 md:px-0">
       <h2 class="text-2xl md:text-4xl font-bold mb-6 md:mb-10 text-gray-800">Our Services</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
@@ -92,13 +91,8 @@
 </template>
 
 <script>
-import Navbar from './Navbar.vue';
-
 export default {
   name: 'ServicesSection',
-  components: {
-    Navbar
-  }
 };
 </script>
 

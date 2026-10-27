@@ -3,8 +3,8 @@
   <div class="calendar-container p-4 sm:p-8 bg-gray-100 rounded-lg shadow-md flex flex-col md:flex-row items-center md:items-start justify-between">
     <!-- Left Side: Logo and Details -->
     <div class="md:w-1/3 w-full p-4 sm:p-8 flex flex-col items-center md:items-start text-center md:text-left">
-      <img src="../assets/logo.svg" alt="Your Logo" class="w-28 sm:w-40 mb-4">
-      <h2 class="text-2xl sm:text-3xl font-bold">Book a Free Strategy Session</h2>
+      <img src="../assets/main_logo.png" alt="TechSquad360 Logo" class="w-28 sm:w-40 mb-4 object-contain">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#213A57]">Book a Free Strategy Session</h2>
       <p class="mt-2 text-sm sm:text-base">30 min</p>
       <p class="text-gray-500 mt-2">Web conferencing details provided upon confirmation.</p>
       <!-- Time Zone Selection -->

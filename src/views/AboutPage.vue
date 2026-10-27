@@ -93,6 +93,7 @@
 import { ref } from 'vue';
 import { LottieAnimation } from 'lottie-web-vue';
 import animationData from '../assets/lotti_animation/aboutPageAnimation.json';
+import mainLogo from '../assets/main_logo.png';
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
 
@@ -109,19 +110,19 @@ export default {
         name: 'Md Mithun Ahmed',
         role: 'Co-Founder & Lead Technologist',
         responsibilities: 'Leads web development, mobile solutions, and web-to-app conversion.',
-        image: '../assets/main_logo.png'
+        image: mainLogo
       },
       {
         name: 'Md Shohanur Islam',
         role: 'Co-Founder & Head of Innovation and Security',
         responsibilities: 'Manages cybersecurity, secure coding practices, and technical support.',
-        image: '../assets/main_logo.png'
+        image: mainLogo
       },
       {
         name: 'Himel Ahmed',
         role: 'Co-Founder & Director of Growth and Client Success',
         responsibilities: 'Guides SEO strategies, digital marketing campaigns, and client management.',
-        image: '../assets/main_logo.png'
+        image: mainLogo
       }
     ];
 

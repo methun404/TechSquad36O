@@ -138,14 +138,6 @@ npm run preview
 
 ---
 
-## 👥 Leadership Team
-
-- **Md Mithun Ahmed** — *Co-Founder & Lead Technologist*
-- **Md Shohanur Islam** — *Co-Founder & Head of Innovation and Security*
-- **Himel Ahmed** — *Co-Founder & Director of Growth and Client Success*
-
----
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).

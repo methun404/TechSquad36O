@@ -4,6 +4,10 @@
   "private": true,
   "description": "TechSquad360 - Innovative technology and digital transformation solutions platform.",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/methun404/TechSquad36O.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

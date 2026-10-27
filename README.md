@@ -61,7 +61,6 @@ techsquad360/
 │   │   ├── AboutUs.vue
 │   │   ├── AchievementsSection.vue
 │   │   ├── BlogResourcesSection.vue
-│   │   ├── CTASection.vue
 │   │   ├── Footer.vue
 │   │   ├── FreeStrategySession.vue
 │   │   ├── HeroSection.vue
@@ -99,8 +98,8 @@ techsquad360/
 
 1. **Clone the repository**:
    ```bash
-   git clone git@github.com:methun404/techsquad360.git
-   cd techsquad360
+   git clone git@github.com:methun404/TechSquad36O.git
+   cd TechSquad36O
    ```
 
 2. **Install project dependencies**:

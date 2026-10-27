@@ -5,6 +5,8 @@
     <ServicesSection />
     <SeoToolsSection />
     <OurProcess />
+    <AchievementsSection />
+    <WorkDoneSection />
     <BlogResourcesSection />
     <FreeStrategySession />
     <AboutUs />
@@ -18,6 +20,8 @@ import HeroSection from "@/components/HeroSection.vue";
 import ServicesSection from "@/components/ServicesSection.vue";
 import SeoToolsSection from "@/components/SeoToolsSection.vue";
 import OurProcess from "@/components/OurProcess.vue";
+import AchievementsSection from "@/components/AchievementsSection.vue";
+import WorkDoneSection from "@/components/WorkDoneSection.vue";
 import BlogResourcesSection from "@/components/BlogResourcesSection.vue";
 import FreeStrategySession from "@/components/FreeStrategySession.vue";
 import AboutUs from "@/components/AboutUs.vue";
@@ -31,6 +35,8 @@ export default {
     ServicesSection,
     SeoToolsSection,
     OurProcess,
+    AchievementsSection,
+    WorkDoneSection,
     BlogResourcesSection,
     FreeStrategySession,
     AboutUs,
